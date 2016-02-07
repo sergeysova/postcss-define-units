@@ -1,6 +1,8 @@
-# PostCSS Define Units [![Build Status][ci-img]][ci]
+# PostCSS Define Units
 
-[PostCSS] plugin define custom units.
+[![Build Status](https://travis-ci.org/LestaD/postcss-define-units.svg?branch=master)](https://travis-ci.org/LestaD/postcss-define-units)
+
+PostCSS plugin define custom units.
 
 So simple. Use `--define` property. Unit define globally.
 
