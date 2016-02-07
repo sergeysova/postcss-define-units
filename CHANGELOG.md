@@ -1,5 +1,10 @@
 # PostCSS Define Units Changelog
 
+## 07.02.2016, v0.0.3
+
+* [[`5ef3b9e315`](https://github.com/Sergey Sova <i.am@lestad.net>/postcss-define-units/commit/5ef3b9e315)] - **add**: Origin file (Sergey Sova)
+* [[`d538c1b0a1`](https://github.com/Sergey Sova <i.am@lestad.net>/postcss-define-units/commit/d538c1b0a1)] - **fix**: accept units in comma-separated values (Sergey Sova)
+
 
 ## 07.02.2016, v0.0.2
 
