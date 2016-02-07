@@ -1,6 +1,6 @@
 {
   "name": "postcss-define-units",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PostCSS plugin define custom units",
   "keywords": [
     "postcss",
