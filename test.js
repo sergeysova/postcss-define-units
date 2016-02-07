@@ -34,3 +34,7 @@ test('replace different in one line', function(t) {
 test('replace different in calc', function(t) {
   return run(t, 'a{ --define: mouse 4px; --define: rat 8px; --define: dog 46px; width: calc(1mouse + 2rat + 3dog) }', 'a{ width: calc(4px + 16px + 138px) }', { });
 });
+
+test('accept unit with dot', function(t) {
+  return run(t, 'a{ --define: unit 10px; line-height: 3.5unit }', 'a{ line-height: 35px }', { });
+});

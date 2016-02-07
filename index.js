@@ -19,7 +19,7 @@ module.exports = postcss.plugin('postcss-define-units', function (opts) {
         for (var rtype in save) {
           var count = save[rtype][0];
           var postfix = save[rtype][1]
-          var reg = new RegExp("((\\d+)" + rtype + ")", 'g');
+          var reg = new RegExp("(([\\d\.]+)" + rtype + ")", 'g');
 
           decl.value = decl.value.replace(reg, function(a, b, c) {
             return [count * c, postfix].join('');
