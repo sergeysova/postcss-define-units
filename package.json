@@ -1,6 +1,6 @@
 {
   "name": "postcss-define-units",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "PostCSS plugin define custom units",
   "keywords": [
     "postcss",
@@ -28,6 +28,5 @@
   "scripts": {
     "test": "ava && eslint *.js"
   },
-  "eslintConfig": {
-  }
+  "eslintConfig": {}
 }
