@@ -40,5 +40,9 @@ test('accept unit with dot', function(t) {
 });
 
 test('expression definition', function(t) {
-  return run(t, 'a{ --define: sq (return Math.pow(value, 2))px; line-height: 2sq; line-height: 8sq }', 'a{ line-height: 4px; line-height: 64px;  }', { });
+  return run(t, 'a{ --define: sq (Math.pow(value, 2))px; line-height: 2sq; line-height: 8sq }', 'a{ line-height: 4px; line-height: 64px }', { });
+});
+
+test('expression definition multiple uses', function(t) {
+  return run(t, 'a{ --define: ms (Math.pow(value, 2) + 10 * value)rem; margin: 2ms 8ms }', 'a{ margin: 24rem 144rem }', { });
 });
