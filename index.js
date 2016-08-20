@@ -21,24 +21,40 @@ exports.default = postcss.plugin('postcss-define-units', function () {
         var type = _postcss$list$space[0];
         var value = _postcss$list$space[1];
 
-        var _value$match = value.match(/(\d+)(\w+)/);
 
-        var _ = _value$match[0];
-        var count = _value$match[1];
-        var postfix = _value$match[2];
+        if (value.charAt(0) == '(') {
+          var _value$match = value.match(/\((.+)\)(\w+)/);
 
-        save[type] = [count, postfix];
+          var _ = _value$match[0];
+          var expression = _value$match[1];
+          var postfix = _value$match[2];
+
+          save[type] = [new Function('value', ['return', '(', expression, ')'].join(' ')), postfix];
+        } else {
+          (function () {
+            var _value$match2 = value.match(/(\d+)(\w+)/);
+
+            var _ = _value$match2[0];
+            var count = _value$match2[1];
+            var postfix = _value$match2[2];
+
+            save[type] = [function (value) {
+              return count * value;
+            }, postfix];
+          })();
+        }
+
         decl.remove();
       } else {
         var _loop = function _loop(_type) {
           var _save$_type = save[_type];
-          var count = _save$_type[0];
+          var f = _save$_type[0];
           var postfix = _save$_type[1];
 
           var reg = new RegExp("(([\\d\.]+)" + _type + ")", 'g');
 
           decl.value = decl.value.replace(reg, function (a, b, c) {
-            return [count * c, postfix].join('');
+            return [f(c), postfix].join('');
           });
         };
 
