@@ -2,7 +2,7 @@
 var postcss = require('postcss');
 var test = require('ava');
 
-var plugin = require('./');
+var plugin = require('./index').default;
 
 function run(t, input, output, opts) {
   opts = opts || {};

@@ -22,10 +22,14 @@
   },
   "devDependencies": {
     "ava": "^0.11.0",
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015-loose": "^7.0.0",
     "eslint": "^1.10.3",
     "eslint-config-postcss": "^1.0.0"
   },
   "scripts": {
+    "build": "babel index.es6 -o index.js",
+    "prepublish": "npm run build",
     "test": "ava && eslint *.js"
   },
   "eslintConfig": {}
