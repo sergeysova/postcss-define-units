@@ -38,3 +38,7 @@ test('replace different in calc', function(t) {
 test('accept unit with dot', function(t) {
   return run(t, 'a{ --define: unit 10px; line-height: 3.5unit }', 'a{ line-height: 35px }', { });
 });
+
+test('expression definition', function(t) {
+  return run(t, 'a{ --define: sq (return Math.pow(value, 2))px; line-height: 2sq; line-height: 8sq }', 'a{ line-height: 4px; line-height: 64px;  }', { });
+});
