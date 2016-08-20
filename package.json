@@ -28,6 +28,7 @@
     "eslint-config-postcss": "^1.0.0"
   },
   "scripts": {
+    "watch": "babel index.es6 --watch -o index.js",
     "build": "babel index.es6 -o index.js",
     "prepublish": "npm run build",
     "test": "ava && eslint *.js"
