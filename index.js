@@ -23,7 +23,7 @@ exports.default = postcss.plugin('postcss-define-units', function () {
 
 
         if (value.charAt(0) == '(') {
-          var _value$match = value.match(/\((.+)\)(\w+)/);
+          var _value$match = value.match(/\((.+)\)(\w+|\%)/);
 
           var _ = _value$match[0];
           var expression = _value$match[1];

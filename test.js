@@ -46,3 +46,7 @@ test('expression definition', function(t) {
 test('expression definition multiple uses', function(t) {
   return run(t, 'a{ --define: ms (Math.pow(value, 2) + 10 * value)rem; margin: 2ms 8ms }', 'a{ margin: 24rem 144rem }', { });
 });
+
+test('expression percentage units', function(t) {
+  return run(t, 'a{ --define: ms (Math.pow(value, 2) + 10 * value)%; margin: 2ms 8ms }', 'a{ margin: 24% 144% }', { });
+});

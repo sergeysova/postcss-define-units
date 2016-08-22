@@ -9,7 +9,7 @@ export default postcss.plugin('postcss-define-units', (options = {}) => {
         const [ type, value ] = postcss.list.space(decl.value);
 
         if(value.charAt(0) == '(') {
-          const [_, expression, postfix] = value.match(/\((.+)\)(\w+)/);
+          const [_, expression, postfix] = value.match(/\((.+)\)(\w+|\%)/);
           save[type] = [new Function('value', [
             'return', '(', expression, ')',
             ].join(' ')), postfix];
