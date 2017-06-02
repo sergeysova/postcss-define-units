@@ -1,6 +1,6 @@
 # PostCSS Define Units
 
-[![Build Status](https://travis-ci.org/preusx/postcss-define-units.svg?branch=master)](https://travis-ci.org/preusx/postcss-define-units)
+[![Build Status](https://travis-ci.org/lestad/postcss-define-units.svg?branch=master)](https://travis-ci.org/lestad/postcss-define-units)
 
 PostCSS plugin define custom units.
 
